@@ -1,0 +1,255 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.liveSense</groupId>
+	<artifactId>org.liveSense.sample.simpleportal</artifactId>
+	<packaging>bundle</packaging>
+	<description>Simple JSP scripted portal</description>
+
+	<name>org.liveSense.sample.simpleportal</name>
+	<version>1.0.0</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
+				<configuration>
+					<slingUrl>${slingUrl}</slingUrl>
+					<user>${user}</user>
+					<password>${password}</password>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install-bundle</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<!-- Iniial bundle configurations (for example FsResource) -->
+						<Felix-Initial-Configuration>
+							${Felix-Initial-Configuration}
+						</Felix-Initial-Configuration>
+
+						<!-- initial content to be loaded on bundle installation -->
+						<Sling-Initial-Content>
+							${Sling-Initial-Content}
+						</Sling-Initial-Content>
+
+						<!-- Resources delegated in bundle as resource -->
+						<Sling-Bundle-Resources>
+							${Sling-Bundle-Resources}
+						</Sling-Bundle-Resources>
+
+						<!-- Copy the files from filesystem to Bundle -->
+						<Include-Resource>
+							${Include-Resource}
+						</Include-Resource>
+
+						<!-- node types to be created -->
+						<Sling-Nodetypes>
+							${Sling-Nodetypes}
+						</Sling-Nodetypes>
+						<!-- Which java packages are exported for other bundles -->
+						<Export-Package>
+							${Export-Package}
+						</Export-Package>
+
+						<!-- Which packges imported to bundle -->
+						<Import-Package>
+							${Import-Package}
+						</Import-Package>
+
+						<!-- Dynamic packages -->
+						<DynamicImport-Package>
+							${DynamicImport-Package}
+						</DynamicImport-Package>
+
+						<!-- Embedded packages -->
+						<Embed-Dependency>
+							${Embed-Dependency}
+						</Embed-Dependency>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Felix-Initial-Configuration>
+							SLING-INF/configuration
+                        </Felix-Initial-Configuration>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>development</id>
+
+			<properties>
+				<!-- Iniial bundle configurations (for example FsResource) -->
+				<Felix-Initial-Configuration>
+					SLING-INF/configuration
+				</Felix-Initial-Configuration>
+
+				<!-- Copy the files from filesystem to Bundle -->
+				<Include-Resource>
+					SLING-INF/configuration=src/main/configuration-dev,
+					SLING-INF/nodetypes=src/main/nodetypes,
+					{maven-resources}
+				</Include-Resource>
+
+				<!-- node types to be created -->
+				<Sling-Nodetypes>
+					SLING-INF/nodetypes/simpleportal.cnd;reregister:=true
+				</Sling-Nodetypes>
+
+				<Export-Package>
+					org.liveSense.*
+				</Export-Package>
+
+				<Import-Package>
+					!javax.portlet.*,
+					*;resolution:=optional
+				</Import-Package>
+
+				<Embed-Dependency>
+					org.apache.sling.commons.osgi;inline="org/apache/sling/commons/osgi/OsgiUtil.*",
+					commons-lang;inline="org/apache/commons/lang/StringUtils.class",
+					commons-codec;inline="org/apache/commons/codec/binary/Base64.*
+					|org/apache/commons/codec/binary/Hex*
+					|org/apache/commons/codec/binary/StringUtils*
+					|org/apache/commons/codec/BinaryEncoder*
+					|org/apache/commons/codec/BinaryDecoder*
+					|org/apache/commons/codec/Encoder*
+					|org/apache/commons/codec/Decoder*
+					|org/apache/commons/codec/EncoderException*
+					|org/apache/commons/codec/DecoderException*"
+				</Embed-Dependency>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>release</id>
+
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Iniial bundle configurations (for example FsResource) -->
+				<Felix-Initial-Configuration></Felix-Initial-Configuration>
+				<!-- initial content to be loaded on bundle installation -->
+				<Sling-Initial-Content>
+					SLING-INF/nodes;overwrite:=false;uninstall:=false,
+					SLING-INF/content;overwrite:=false;uninstall:=false,
+				</Sling-Initial-Content>
+
+				<!-- Delegate Bundle content as resource -->
+				<Sling-Bundle-Resources>
+					/apps/simpleportal,
+				</Sling-Bundle-Resources>
+
+				<!-- node types to be created -->
+				<Sling-Nodetypes>
+					SLING-INF/nodetypes/simpleportal.cnd;reregister:=true
+				</Sling-Nodetypes>
+				<Export-Package>
+					com.liveSense.*
+				</Export-Package>
+
+				<Import-Package>
+					!javax.portlet.*,
+					*;resolution:=optional
+				</Import-Package>
+
+				<!-- Copy the files from filesystem to Bundle -->
+				<Include-Resource>
+					SLING-INF/configuration=src/main/configuration,
+					SLING-INF/nodes=src/main/nodes,
+					SLING-INF/content=src/main/content,
+					SLING-INF/nodetypes=src/main/nodetypes,
+					apps=src/main/scripts/apps,
+					{maven-resources}
+				</Include-Resource>
+
+				<Embed-Dependency>
+					org.apache.sling.commons.osgi;inline="org/apache/sling/commons/osgi/OsgiUtil.*",
+					commons-lang;inline="org/apache/commons/lang/StringUtils.class",
+					commons-codec;inline="org/apache/commons/codec/binary/Base64.*
+					|org/apache/commons/codec/binary/Hex*
+					|org/apache/commons/codec/binary/StringUtils*
+					|org/apache/commons/codec/BinaryEncoder*
+					|org/apache/commons/codec/BinaryDecoder*
+					|org/apache/commons/codec/Encoder*
+					|org/apache/commons/codec/Decoder*
+					|org/apache/commons/codec/EncoderException*
+					|org/apache/commons/codec/DecoderException*"
+				</Embed-Dependency>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.liveSense</groupId>
+			<artifactId>org.liveSense.scripting.jsp.taglib.jstl</artifactId>
+			<version>1.0.0</version>
+			<type>bundle</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+			<version>2.1.0</version>
+			<type>bundle</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.jackrabbit</groupId>
+			<artifactId>jackrabbit-core</artifactId>
+			<version>2.1.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>
