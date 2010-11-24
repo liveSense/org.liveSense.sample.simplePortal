@@ -119,10 +119,16 @@
 				<Felix-Initial-Configuration>
 					SLING-INF/configuration
 				</Felix-Initial-Configuration>
-
+				
+				<!-- initial content to be loaded on bundle installation -->
+				<Sling-Initial-Content>
+					SLING-INF/nodes;overwrite:=true;uninstall:=true
+				</Sling-Initial-Content>
+				
 				<!-- Copy the files from filesystem to Bundle -->
 				<Include-Resource>
 					SLING-INF/configuration=src/main/configuration-dev,
+					SLING-INF/nodes=src/main/nodes,
 					SLING-INF/nodetypes=src/main/nodetypes,
 					{maven-resources}
 				</Include-Resource>
@@ -168,8 +174,8 @@
 				<Felix-Initial-Configuration></Felix-Initial-Configuration>
 				<!-- initial content to be loaded on bundle installation -->
 				<Sling-Initial-Content>
-					SLING-INF/nodes;overwrite:=false;uninstall:=false,
-					SLING-INF/content;overwrite:=false;uninstall:=false,
+					SLING-INF/nodes;overwrite:=true;uninstall:=true,
+					SLING-INF/content;overwrite:=false;uninstall:=true
 				</Sling-Initial-Content>
 
 				<!-- Delegate Bundle content as resource -->

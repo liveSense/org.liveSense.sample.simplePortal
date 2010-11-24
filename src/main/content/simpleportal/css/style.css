@@ -29,7 +29,7 @@ body
 
 .PageBackgroundGlareImage
 {
-	background-image: url('images/Page-BgGlare.png');
+	background-image: url('../images/Page-BgGlare.png');
 	background-repeat: no-repeat;
 	height: 490px;
 	width: 244px;
@@ -46,7 +46,7 @@ html:first-child .PageBackgroundGlare
 .PageBackgroundSimpleGradient
 {
 	position: absolute;
-	background-image: url('images/Page-BgSimpleGradient.jpg');
+	background-image: url('../images/Page-BgSimpleGradient.jpg');
 	background-repeat: repeat-x;
 	top:0;
 	width: 100%;
@@ -106,7 +106,7 @@ table.position
 {
 	width: 34px;
 	height: 34px;
-	background-image: url('images/Sheet-s.png');
+	background-image: url('../images/Sheet-s.png');
 }
 
 .Sheet-tl
@@ -142,7 +142,7 @@ table.position
 	left: 17px;
 	right: 17px;
 	height: 34px;
-	background-image: url('images/Sheet-h.png');
+	background-image: url('../images/Sheet-h.png');
 }
 
 .Sheet-tc
@@ -162,7 +162,7 @@ table.position
 	top: 17px;
 	bottom: 17px;
 	width: 34px;
-	background-image: url('images/Sheet-v.png');
+	background-image: url('../images/Sheet-v.png');
 }
 
 .Sheet-cr
@@ -220,7 +220,7 @@ div.Header-jpeg
 	left: 0;
 	width: 874px;
 	height: 250px;
-	background-image: url('images/Header.jpg');
+	background-image: url('../images/Header.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -388,7 +388,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 	z-index: -1;
 	top: 0;
 	height: 41px;
-	background-image: url('images/nav.png');
+	background-image: url('../images/nav.png');
 }
 
 .nav .l
@@ -430,7 +430,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 	position:absolute;
 	display: block;
 	height: 123px;
-	background-image: url('images/MenuItem.png');
+	background-image: url('../images/MenuItem.png');
 }
 
 .artmenu a .l
@@ -538,7 +538,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 {
 	width: 14px;
 	height: 14px;
-	background-image: url('images/Block-s.png');
+	background-image: url('../images/Block-s.png');
 }
 
 .Block-tl
@@ -574,7 +574,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 	left: 7px;
 	right: 7px;
 	height: 14px;
-	background-image: url('images/Block-h.png');
+	background-image: url('../images/Block-h.png');
 }
 
 .Block-tc
@@ -594,7 +594,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 	top: 7px;
 	bottom: 7px;
 	width: 14px;
-	background-image: url('images/Block-v.png');
+	background-image: url('../images/Block-v.png');
 }
 
 .Block-cr
@@ -657,7 +657,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 	position:absolute;
 	z-index:-1;
 	height: 30px;
-	background-image: url('images/BlockHeader.png');
+	background-image: url('../images/BlockHeader.png');
 }
 
 .BlockHeader .l
@@ -681,7 +681,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 {
 	display:inline-block;
 	background-position:left top;
-	background-image: url('images/BlockHeaderIcon.png');
+	background-image: url('../images/BlockHeaderIcon.png');
 	padding:0 0 0 21px;
 	background-repeat: no-repeat;
 	min-height: 14px;
@@ -758,7 +758,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 .BlockContent-body ul li
 {
 	padding:0px 0 0px 13px;
-	background-image: url('images/BlockContentBullets.png');
+	background-image: url('../images/BlockContentBullets.png');
 	background-repeat:no-repeat;
 	margin:0.5em 0 0.5em 0;
 	line-height:1.2em;
@@ -1091,7 +1091,7 @@ ol
 
 .Post ul li, .Post ol ul li 
 {
-	background-image: url('images/PostBullets.png');
+	background-image: url('../images/PostBullets.png');
 	background-repeat:no-repeat;
 	padding-left:13px;
 }
@@ -1117,7 +1117,7 @@ blockquote
 		margin:10px 10px 10px 50px;
 	padding:5px 5px 5px 41px;
 	background-color:#C4E2BB;
-	background-image:url('images/PostQuote.png');
+	background-image:url('../images/PostQuote.png');
 	background-position:left top;
 	background-repeat:no-repeat;
 }
@@ -1195,7 +1195,7 @@ input, select
 	position:absolute;
 	z-index:-1;
 	height: 102px;
-	background-image: url('images/Button.png');
+	background-image: url('../images/Button.png');
 }
 
 .Button .btn .l
@@ -1248,7 +1248,7 @@ input, select
 	position:absolute;
 	z-index:-1;
 	background-repeat:no-repeat;
-	background-image: url('images/Footer.png');
+	background-image: url('../images/Footer.png');
 	width: 874px;
 	height: 150px;
 	bottom:0;
@@ -1261,7 +1261,7 @@ input, select
 	position: relative;
 	display:block;
 	float:left;
-	background-image: url('images/rssIcon.png');
+	background-image: url('../images/rssIcon.png');
 	background-position: center right;
 	background-repeat: no-repeat;
 	margin: 0 5px 0 0;

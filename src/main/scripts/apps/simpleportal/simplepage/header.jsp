@@ -14,11 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title><%= currentNode.getProperty("title").getValue().getString() %></title>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
-    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <!--[if IE 6]><link rel="stylesheet" href="css/style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="css/style.ie7.css" type="text/css" media="screen" /><![endif]-->
 </head>
 <body>
 <div class="PageBackgroundSimpleGradient">
@@ -26,5 +26,4 @@
     <div class="PageBackgroundGlare">
         <div class="PageBackgroundGlareImage"></div>
     </div>
-
 	<!--header end-->
