@@ -1,0 +1,5 @@
+{
+    "jcr:primaryType": "simpleportal:htmlmail",
+    "recepients": "test@livesense.org",
+    "createDate": "2011-05-04T12:08:56"
+}

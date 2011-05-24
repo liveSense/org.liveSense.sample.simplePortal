@@ -8,3 +8,7 @@
 	- 'portalName' (String) 
 	- 'content' (String)
 	- 'menu' (String)
+
+[simpleportal:htmlmail] > nt:unstructured
+	- 'recepients' (String)
+	- 'createDate' (Date)
