@@ -15,7 +15,7 @@
 	<packaging>bundle</packaging>
 	<description>Simple JSP scripted portal</description>
 
-	<name>liveSense simple portal example</name>
+	<name>liveSense :: Sample :: Simple portal</name>
 	<version>1.0.1-SNAPSHOT</version>
 
 	<properties>
