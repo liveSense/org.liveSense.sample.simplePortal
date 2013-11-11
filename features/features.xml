@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><features name="liveSense-${liveSense.version}-sample-simplePortal" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+	<feature name="liveSense-sample-simplePortal" version="${liveSense.sample.simplePortal.version}" description="liveSense sample simplePortal">
+        <feature>liveSense-scripting-jsp-taglib-jstl</feature>
+		<bundle>mvn:com.github.livesense/org.liveSense.sample.simplePortal/${liveSense.sample.simplePortal.version}</bundle>
+	</feature>
+</features>
