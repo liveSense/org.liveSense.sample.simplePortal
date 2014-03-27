@@ -7,11 +7,11 @@
       <version>2-SNAPSHOT</version>
 		<relativePath>..</relativePath>
   </parent>
-  <scm>
-      <connection>scm:git:git://github.com/liveSense/org.liveSense.sample.simplePortal.git</connection>
-      <developerConnection>scm:git:git://github.com/liveSense/org.liveSense.sample.simplePortal.git</developerConnection>
-      <url>https://github.com/liveSense/org.liveSense.sample.simplePortal</url>
-  </scm>  
+	<scm>
+		<connection>scm:git:https://github.com/liveSense/org.liveSense.sample.simplePortal.git</connection>
+		<developerConnection>scm:git:https://github.com/liveSense/org.liveSense.sample.simplePortal.git</developerConnection>
+		<url>https://github.com/liveSense/org.liveSense.sample.simplePortal</url>
+	</scm>
 	<artifactId>org.liveSense.sample.simplePortal</artifactId>
 	<packaging>bundle</packaging>
 	<description>Simple JSP scripted portal</description>
