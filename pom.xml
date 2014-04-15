@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
   <parent>
       <groupId>com.github.livesense</groupId>
@@ -7,13 +6,14 @@
       <version>1.0.3</version>
 		<relativePath>..</relativePath>
   </parent>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.3</version>
 
 	<scm>
 		<connection>scm:git:https://github.com/liveSense/org.liveSense.sample.simplePortal.git</connection>
 		<developerConnection>scm:git:https://github.com/liveSense/org.liveSense.sample.simplePortal.git</developerConnection>
 		<url>https://github.com/liveSense/org.liveSense.sample.simplePortal</url>
-	</scm>
+	  <tag>1.0.3</tag>
+  </scm>
 	<artifactId>org.liveSense.sample.simplePortal</artifactId>
 	<packaging>bundle</packaging>
 	<description>Simple JSP scripted portal</description>
@@ -137,7 +137,7 @@
 			</activation>
 			<properties>
 				<!-- Iniial bundle configurations (for example FsResource) -->
-				<Felix-Initial-Configuration></Felix-Initial-Configuration>
+				<Felix-Initial-Configuration />
 				<!-- initial content to be loaded on bundle installation -->
 				<Sling-Initial-Content>
 					nodes;overwrite:=true;uninstall:=true,
